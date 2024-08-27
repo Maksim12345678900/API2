@@ -1,0 +1,74 @@
+from flask import Flask, jsonify, request, abort
+
+app = Flask(__name__)
+
+# Предполагаемая структура данных
+users = {}
+posts = {}
+
+@app.route('/users', methods=['POST'])
+def create_user():
+    # Здесь должен быть код для создания пользователя
+    pass
+
+@app.route('/users/<int:user_id>', methods=['GET', 'PUT', 'DELETE'])
+def user_operations(user_id):
+    # Здесь должен быть код для чтения, обновления или удаления пользователя
+    pass
+
+@app.route('/posts', methods=['POST'])
+def create_post():
+    # Здесь должен быть код для создания поста
+    pass
+
+@app.route('/posts/<int:post_id>', methods=['GET', 'PUT', 'DELETE'])
+def post_operations(post_id):
+    # Здесь должен быть код для чтения, обновления или удаления поста
+    pass
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+Инструкция по запуску:
+
+Установите Flask 3, используя pip install flask.
+Сохраните приведенный выше код в файле, например app.py.
+Запустите сервер, выполнив python app.py в командной строке.
+Примеры запросов:
+
+Создание пользователя:
+
+HTTP метод: POST
+URL: /users
+Тело запроса: { "username": "new_user", "email": "user@example.com" }
+Получение информации о пользователе:
+
+HTTP метод: GET
+URL: /users/1
+Обновление пользователя:
+
+HTTP метод: PUT
+URL: /users/1
+Тело запроса: { "username": "updated_user", "email": "user@example.com" }
+Удаление пользователя:
+
+HTTP метод: DELETE
+URL: /users/1
+Создание поста:
+
+HTTP метод: POST
+URL: /posts
+Тело запроса: { "title": "New Post", "content": "Post content", "user_id": 1 }
+Получение информации о посте:
+
+HTTP метод: GET
+URL: /posts/1
+Обновление поста:
+
+HTTP метод: PUT
+URL: /posts/1
+Тело запроса: { "title": "Updated Post", "content": "Updated content" }
+Удаление поста:
+
+HTTP метод: DELETE
+URL: /posts/1
